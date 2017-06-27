@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 6.1 - Front End Web Development Fundamentals</title>
+	<style type="text/css">
+		/*Applying basic style to h1 and body contents*/
+		h1
+		{
+			color:blue;
+			font-size: 30px;
+			font-family: arial;
+			text-decoration: underline;
+		}
+		body
+		{
+			font-size: 18px;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+<h1> This assignment will demonstrate the use of javascript!</h1>
+<br><hr>
+<!--This will accept basic salary along with work hours and on clicking submit button, it would return the increased salary depending on the condition -->
+<p>Basic salary of an employee: </p>
+<input type="number" id="basicSalEmp" value="1" min="1" max="99999"/><br>
+<p>Daily work hours: </p>
+<input type="number" id="wrkHrsField" value="1" min="1" max="24"/><br>
+<input type="submit" id="submitButton" onclick="generateBonusAmount();">
+<br>
+<div><p id="finalResult"></p></div>
+<script type="text/javascript">
+/*The method would generate the bonus amount depending on the value of basic salary and number of hours worked.
+It will display the result in a paragraph under div with id="finalResult"*/
+	function generateBonusAmount()
+	{
+		var sal=basicSalEmp.value;
+		var wrkhrs=wrkHrsField.value;
+		var result;
+		if (sal>=15000 && wrkhrs>10) {
+result=sal*1.1;
+document.getElementById("finalResult").innerHTML="Increased basic salary by 10% and revised basic salary is "+result;
+		}
+		else
+		{
+			result=sal*1.05;
+			document.getElementById("finalResult").innerHTML="Increased basic salary by 5% and revised basic salary is "+result;
+		}
+
+	}
+</script>
+</body>
+</html>
